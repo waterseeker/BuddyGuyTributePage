@@ -1,0 +1,303 @@
+:root {
+  --main-text-color: silver;
+  --highlight-text-color: whitesmoke;
+  --main-background-color: #0d0d0d;
+}
+
+
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--highlight-text-color);
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+h1 {
+  padding-bottom: 30px;
+  font-size: 6em;
+}
+
+h2 {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+h6 {
+  padding-top: 30px;
+}
+
+p {
+  margin-top: 30px;
+  width: 80%;
+  font-size: 2em;
+}
+
+/*                                                                 */
+/* neon glow effect from https://codepen.io/FelixRilling/pen/qzfoc */
+/*                                                                 */
+
+.header {
+  font-family: Pacifico;
+  color: blue;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+  
+}
+#blues {
+  font-size: 1.5em;
+  color: blue;
+  font-family: Pacifico;
+}
+
+#blues:hover {
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+/* glow for webkit */
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+/*glow for mozilla */
+@-moz-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+/* glow */
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+
+/* These styles apply to wide screen (though some carry over to mobile */
+/* The whole nav menu */
+
+#menu {
+  width: 100%;
+  background: #000000;
+  overflow: hidden;
+}
+/* Each link in the nav menu */
+
+#menu a {
+  display: block;
+  float: left;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  
+}
+/*Checkbox looks like a button, easy to detect click */
+
+input[type="checkbox"] {
+  display: none;
+}
+/*When the "checkbox" is checked, show the dropdown menu */
+
+input[type="checkbox"]:checked ~ #menu {
+  display: block;
+}
+/* The top bar that shows the hamburger icon on small screens */
+
+.hamburger {
+  text-decoration: none;
+  color: whitesmoke;
+  background: black;
+  padding: 4px 0 0 10px;
+  display: none;
+}
+/* Just the hamburger image */
+
+#menuToggle span {
+  height: 36px;
+  padding-top: 4px;
+}
+
+@media screen and (max-width: 760px) {
+  /* CSS for narrow screens */
+  /* Hide the navbar */
+  #menu {
+    position: absolute;
+    display: none;
+  }
+
+  /* The top bar that shows the hamburger icon */
+  #menuToggle span {
+    display: block;
+    border-bottom: solid 1px whitesmoke;
+  }
+
+  /* Each link in the dropdown menu */
+  #menuToggle span {
+    display: block;
+    float: none;
+    padding: 10px 0;
+    text-align: center;
+    background: black;
+    text-decoration: none;
+    color: whitesmoke;
+    border-bottom: solid 1px whitesmoke;
+    border-right: none;
+  }
+}
+/* End of #media screen */
+
+
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menuList
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menuList li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
